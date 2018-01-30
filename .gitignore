@@ -1,4 +1,1 @@
-workspace/composer.json
-workspace/php.ini
 workspace/vendor/*
-workspace/composer.lock
