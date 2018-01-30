@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+
+{% block contents %}
+
+<div class="row">
+    <form method="post" action="{{ controller.router.full_link.fullPath() }}">
+        
+        <div class="holder holder-blue col-md-8 col-md-offset-2">
+                <div class="holder-title">
+                    Registreren
+                    <i class="fa fa-address-card"></i>
+                </div>
+                <div class="holder-content">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label required for="register-firstname">Voornaam</label>
+                                <input required value="{{ controller.router.post_data.firstname }}" name="firstname" type="text" class="form-control" id="register-fristname" placeholder="Voornaam">
+                            </div>
+                            <div class="form-group">
+                                <label for="register-prefix">Tussenvoegsel</label>
+                                <input value="{{ controller.router.post_data.prefix }}" name="prefix" type="text" class="form-control" id="register-prefix" placeholder="Tussenvoegsel">
+                            </div>
+                            <div class="form-group">
+                                <label required for="register-lastname">Achternaam</label>
+                                <input required value="{{ controller.router.post_data.lastname }}" name="lastname" type="text" class="form-control" id="register-lastname" placeholder="Achternaam">
+                            </div>
+                            <div class="form-group">
+                                <label required for="register-born">Geboortedatum</label>
+                                <input required value="{{ controller.route.post_data.born }}" name="born" type="text" class="form-control" id="register-born" placeholder="01/01/1970">
+                            </div>
+                            <div class="form-group">
+                                <label for="register-adress">Adres</label>
+                                <input value="{{ controller.router.post_data.adress }}" name="adress" type="text" class="form-control" id="register-adress" placeholder="Adres">
+                            </div>
+                                <div class="form-group">
+                                <label for="register-residence">Woonplaats</label>
+                                <input value="{{ controller.router.post_data.residence }}" name="residence" type="text" class="form-control" id="register-residence" placeholder="Woonplaats">
+                            </div>
+                            <div class="form-group">
+                                <label required for="register-phone">Telefoon nummer</label>
+                                <input required value="{{ controller.router.post_data.phone }}" name="phone" type="text" class="form-control" id="register-phone" placeholder="0612345678">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label required for="register-username">Gamertag</label>
+                                <input required value="{{ controller.router.post_data.username }}" name="username" type="text" class="form-control" id="register-username" placeholder="Gebruikersnaam">
+                            </div>
+                            <div class="form-group">
+                                <label for="register-email" required>E-mailadres</label>
+                                <input required value="{{ controller.router.post_data.email }}" name="email" type="email" class="form-control" id="register-email" placeholder="E-mailadres">
+                            </div>
+                            <div class="form-group">
+                                <label required for="register-password">Wachtwoord</label>
+                                <input required name="password" type="password" class="form-control" id="register-password" placeholder="Wachtwoord">
+                            </div>
+                            <button type="submit" class="btn btn-blue btn-wide btn-right">Registreer</button>
+                        </div>
+                    </div>
+                </div>
+            <div class="holder-footer"></div>
+        </div>
+        
+    </form>
+</div>
+
+{% endblock %}

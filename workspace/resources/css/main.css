@@ -1,0 +1,244 @@
+@font-face {
+  font-family: Roboto;
+  src: url('webfonts/Roboto-Regular.ttf');
+}
+body,
+html {
+  height: 100%;
+  font-family: Roboto;
+}
+nav.navbar {
+  width: 250px;
+  background-color: #222;
+  min-height: 100%;
+  float: left;
+  box-shadow: 0 0 5px black;
+  position: fixed;
+  margin-bottom: 0;
+}
+@media screen and (max-width: 770px) {
+  nav.navbar {
+    width: 100%;
+    z-index: 99;
+    min-height: 50px;
+    margin-bottom: 20px;
+  }
+}
+nav.navbar .container-fluid {
+  padding: 0;
+}
+nav.navbar .item,
+nav.navbar .header {
+  width: 100%;
+}
+nav.navbar .header .navbar-toggle {
+  z-index: 9;
+  margin-right: -8px;
+}
+nav.navbar .header .navbar-toggle .icon-bar {
+  background-color: #ddd;
+}
+nav.navbar .header a {
+  width: 100%;
+  margin-left: 0 !important;
+  font-weight: 900;
+}
+@media screen and (max-width: 770px) {
+  nav.navbar .header a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: -5px !important;
+  }
+}
+nav.navbar .header a .brand-icon {
+  height: 100%;
+  float: right;
+  filter: brightness(5.0) invert(20%);
+}
+@media screen and (max-width: 770px) {
+  nav.navbar .header a .brand-icon {
+    float: left;
+    margin-right: 5px;
+  }
+}
+nav.navbar .header a:hover .brand-icon {
+  filter: brightness(5.0);
+}
+nav.navbar .item a {
+  border-radius: 0 !important;
+  margin-top: 0 !important;
+}
+nav.navbar .item a .fa {
+  float: right;
+  position: relative;
+  top: 2px;
+  right: 4px;
+}
+nav.navbar .item ul.dropdown-menu {
+  position: relative;
+  float: none;
+  padding: 0;
+  background-color: transparent;
+  border: 0;
+  box-shadow: 0;
+  margin: 0;
+}
+nav.navbar .item ul.dropdown-menu li a {
+  padding: 6px 12px 6px 24px;
+}
+nav.navbar .header a,
+nav.navbar .item a {
+  text-align: left;
+  color: #ddd;
+  background-color: #222;
+  border-bottom: 1px solid #3c3c3c;
+  font-size: 1.1em;
+  border-left: 2px solid transparent;
+}
+nav.navbar .header a:hover,
+nav.navbar .header a:active,
+nav.navbar .header a:focus,
+nav.navbar .item a:hover,
+nav.navbar .item a:active,
+nav.navbar .item a:focus {
+  color: #ffffff;
+  outline: 0 !important;
+}
+nav.navbar .header a:hover,
+nav.navbar .header a.active,
+nav.navbar .header a[aria-expanded="true"],
+nav.navbar .item a:hover,
+nav.navbar .item a.active,
+nav.navbar .item a[aria-expanded="true"] {
+  background-color: #000000;
+  border-left: 2px solid #ffffff;
+}
+main {
+  width: 100%;
+  min-height: 100%;
+  padding-left: 250px;
+  background-color: #eee;
+}
+@media screen and (max-width: 770px) {
+  main {
+    padding-left: 0;
+    padding-top: 20px;
+  }
+}
+main .container-fluid:first-of-type {
+  padding-top: 50px;
+  padding-bottom: 30px;
+}
+.holder {
+  margin-bottom: 20px;
+}
+.holder .holder-title {
+  background-color: #222;
+  color: #ddd;
+  padding: 5px 15px;
+  font-size: 20px;
+}
+.holder .holder-title .fa {
+  float: right;
+  line-height: 30px;
+}
+.holder .holder-content {
+  border-left: 1px solid #222;
+  border-right: 1px solid #222;
+  padding: 10px 15px;
+  background-color: #fff;
+}
+.holder .holder-footer {
+  background-color: #222;
+  min-height: 3px;
+}
+.holder.holder-blue .holder-title,
+.holder.holder-blue .holder-footer {
+  background-color: #478bca;
+  color: #eee;
+}
+.holder.holder-blue .holder-content {
+  border-color: #478bca;
+  overflow: auto;
+}
+.holder.holder-gold .holder-title,
+.holder.holder-gold .holder-footer {
+  background-color: #e5d88e;
+  color: #333;
+}
+.holder.holder-gold .holder-content {
+  border-color: #e5d88e;
+  overflow: auto;
+}
+.holder.holder-light-gray .holder-title,
+.holder.holder-light-gray .holder-footer {
+  background-color: #4e5a66;
+  color: #eee;
+}
+.holder.holder-light-gray .holder-content {
+  border-color: #4e5a66;
+  overflow: auto;
+}
+.holder.holder-gray .holder-title,
+.holder.holder-gray .holder-footer {
+  background-color: #727a81;
+  color: #eee;
+}
+.holder.holder-gray .holder-content {
+  border-color: #727a81;
+  overflow: auto;
+}
+form .btn.btn-wide {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+form .btn.btn-right {
+  float: right;
+}
+form .btn.btn-right:after {
+  clear: both;
+}
+form .btn.btn-blue {
+  background-color: #478bca;
+  border: 1px solid #96bde1;
+  color: #ffffff;
+}
+form .btn.btn-blue:hover {
+  background-color: #3271ac;
+}
+form .btn.btn-blue:focus {
+  border: 1px solid #000000;
+}
+form .btn:active,
+form .btn:focus {
+  outline: 0 !important;
+}
+form .form-divider {
+  border-bottom: 1px solid #eee;
+  margin: 2px -15px 8px;
+}
+label[required] {
+  width: 100%;
+}
+label[required]:after {
+  float: right;
+  content: "*";
+  color: #808080;
+}
+label[required]:hover:after {
+  content: "Vereist  *";
+}
+.holder.holder-error {
+  margin-bottom: 2px;
+}
+.holder.holder-error .holder-title,
+.holder.holder-error .holder-footer {
+  min-height: 3px;
+  background-color: #552222;
+  margin: 0;
+}
+.holder.holder-error .holder-content {
+  border-color: #552222;
+  color: #001111;
+}

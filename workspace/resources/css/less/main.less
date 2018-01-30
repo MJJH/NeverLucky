@@ -1,0 +1,296 @@
+@nav-width: 250px;
+@nav-color: #222;
+@nav-text: #ddd;
+@nav-border: lighten(@nav-color, 10%);
+@change-width: 770px;
+
+@font-face {
+    font-family: Roboto;
+    src: url('webfonts/Roboto-Regular.ttf');
+}
+
+
+body,html {
+    height: 100%;
+    font-family: Roboto;
+}
+
+/* nav */
+nav.navbar {
+    width: @nav-width;
+    background-color: @nav-color;
+    min-height: 100%;
+    float: left;
+    box-shadow: 0 0 5px black;
+    position: fixed;
+    margin-bottom: 0;
+    
+    @media screen and (max-width : @change-width) {
+        width: 100%;
+        z-index: 99;
+        min-height: 50px;
+        margin-bottom: 20px;
+    }
+    
+    .container-fluid {
+        padding: 0;
+    }
+    
+    .item, .header {
+        width: 100%;
+    }
+    
+    .header {
+        .navbar-toggle {
+            z-index: 9;
+            margin-right: -8px;
+            
+            .icon-bar {
+                background-color: @nav-text;
+            }
+        }
+    }
+    
+    .header a {
+        width: 100%;
+        margin-left: 0 !important;
+        font-weight: 900;
+        
+        @media screen and (max-width : @change-width) {
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin-left: -5px !important;
+        }
+        
+        .brand-icon {
+            height: 100%;
+            float: right;
+            filter: brightness(5.0) invert(20%);
+            
+            @media screen and (max-width : @change-width) {
+                float: left;
+                margin-right: 5px;
+            }
+        }
+        
+        &:hover {
+            .brand-icon {
+                filter: brightness(5.0);
+            }
+        }
+    }
+    
+    .item {
+        a {
+            border-radius: 0 !important;
+            margin-top: 0 !important;
+            
+            .fa {
+                float: right;
+                position: relative;
+                top: 2px;
+                right: 4px;
+            }
+        }
+        
+        ul.dropdown-menu {
+            position: relative;
+            float: none;
+            padding: 0;
+            background-color: transparent;
+            border: 0;
+            box-shadow: 0;
+            margin: 0;
+            
+            li {
+                a {
+                    padding: 6px 12px 6px 24px;
+                }
+            }
+        }
+    }
+    
+    .header a, .item a {
+        text-align: left;
+        color: @nav-text;
+        background-color: @nav-color;
+        border-bottom: 1px solid @nav-border;
+        font-size: 1.1em;
+        border-left: 2px solid transparent;
+        
+        &:hover, &:active, &:focus {
+            color: lighten(@nav-text, 50%);
+            outline: 0 !important;
+        }
+        
+        &:hover, &.active, &[aria-expanded="true"] {
+            background-color: darken(@nav-color);
+            border-left: 2px solid lighten(@nav-text, 50%);
+        }
+    }
+}
+
+/* main */
+main {
+    width: 100%;
+    min-height: 100%;
+    padding-left: @nav-width;
+    background-color: #eee;
+    
+    @media screen and (max-width : @change-width) {
+		padding-left: 0;
+		padding-top: 20px;
+	}
+    
+    .container-fluid:first-of-type { 
+        padding-top: 50px;
+        padding-bottom: 30px;
+    }
+}
+
+.holder {
+    .holder-title {
+        background-color: @nav-color;
+        color: @nav-text;
+        padding: 5px 15px;
+        font-size: 20px;
+        
+        .fa {
+            float: right;
+            line-height: 30px;
+        }
+    }
+    
+    .holder-content {
+        border-left: 1px solid @nav-color;
+        border-right: 1px solid @nav-color;
+        padding: 10px 15px;
+        background-color: #fff;
+    }
+    
+    .holder-footer {
+        background-color: @nav-color;
+        min-height: 3px;
+    }
+    
+    margin-bottom: 20px;
+}
+
+@accent-blue: #478bca;
+@accent-light-gray: #727a81;
+@accent-gray: #4e5a66;
+@accent-gold: #e5d88e;
+
+.holder.holder-blue {
+    .holder-title, .holder-footer {
+        background-color: @accent-blue;
+        color: #eee;
+    }
+    .holder-content {
+        border-color: @accent-blue;
+        overflow: auto;
+    }
+}
+
+.holder.holder-gold {
+    .holder-title, .holder-footer {
+        background-color: @accent-gold;
+        color: #333;
+    }
+    .holder-content {
+        border-color: @accent-gold;
+        overflow: auto;
+    }
+}
+
+.holder.holder-light-gray {
+    .holder-title, .holder-footer {
+        background-color: @accent-gray;
+        color: #eee;
+    }
+    .holder-content {
+        border-color: @accent-gray;
+        overflow: auto;
+    }
+}
+
+
+.holder.holder-gray {
+    .holder-title, .holder-footer {
+        background-color: @accent-light-gray;
+        color: #eee;
+    }
+    .holder-content {
+        border-color: @accent-light-gray;
+        overflow: auto;
+    }
+}
+
+form {
+    .btn {
+        &.btn-wide {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        &.btn-right {
+            float: right;
+            
+            &:after {
+                clear: both;
+            }
+        }
+        &.btn-blue {
+            background-color: @accent-blue;
+            border: 1px solid lighten(@accent-blue, 20%);
+            color: lighten(@nav-text, 50%);
+            &:hover {
+                background-color: darken(@accent-blue, 10%);
+            }
+            &:focus {
+                border: 1px solid darken(@accent-blue, 100%);
+            }
+        }
+        
+        &:active, &:focus {
+            outline: 0 !important;
+        }
+    }
+    
+    .form-divider {
+        border-bottom: 1px solid #eee;
+        margin: 2px -15px 8px;
+    }
+}
+
+label[required] {
+    width: 100%;
+    &:after {
+        float: right;
+        content: "*";
+        color: lighten(#000, 50%);
+    }
+    
+    &:hover {
+        &:after {
+            content: "Vereist  *";
+        }
+    }
+}
+
+@error-color: #552222;
+@error-text: #001111;
+
+.holder.holder-error {
+    .holder-title, .holder-footer {
+        min-height: 3px;
+        background-color: @error-color;
+        margin: 0;
+    }
+    .holder-content {
+        border-color: @error-color;
+        color: @error-text;
+    }
+    
+    margin-bottom: 2px;
+}

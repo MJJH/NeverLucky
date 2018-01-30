@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="nl">
+    <head>
+        <title>{% block title %} {{ controller.title }} - NeverLucky {% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta charset="UTF-8">
+        {% block styles %}
+            {% for stylesheet in controller.stylesheets %}
+                <link rel="stylesheet" type="text/css" href="{{ stylesheet }}">
+            {% endfor %}
+        {% endblock %}
+    </head>
+    <body>
+        <nav class="navbar navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="{{ controller.url_for('index') }}">Never Lucky
+                        <img class="brand-icon" src="{{ controller.url_for("images/logo.png") }}">
+                    </a>
+    		   </div>
+    		   <div class="collapse navbar-collapse" id="main-navbar">
+                   <div class="btn-group-vertical item" role="navigation">
+                       {% if controller.user %}
+                       <a class="btn" href="{{ controller.url_for('login') }}">
+                            Mijn gegevens
+                            <i class="fa fa-fw fa-id-card"></i>
+                        </a>
+                        <!--<a class="btn" href="{{ controller.url_for('login') }}">-->
+                        <!--    Tafel indeling-->
+                        <!--    <i class="fa fa-fw fa-map"></i>-->
+                        <!--</a>-->
+                        <!--<a class="btn" href="{{ controller.url_for('login') }}">-->
+                        <!--    Rooster-->
+                        <!--    <i class="fa fa-fw fa-calendar-alt"></i>-->
+                        <!--</a>-->
+                        
+                        {% if controller.user.admin %}
+                        <div class="btn-group-vertical item">
+                            <a class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Administratie <i class="fa fa-fw fa-caret-down"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">
+                                    Aanmeldingen (5)
+                                    <i class="fa fa-fw fa-check-circle"></i>
+                                </a></li>
+                                <li><a href="#">
+                                    Leden
+                                    <i class="fa fa-fw fa-users"></i>
+                                </a></li>
+                                <li><a href="#">
+                                    Planning
+                                    <i class="fa fa-fw fa-calendar-alt"></i>
+                                </a></li>
+                                <li><a href="#">
+                                    Tent indeling
+                                    <i class="fa fa-fw fa-map"></i>
+                                </a></li>
+                                <li><a href="#">
+                                    Boodschappen
+                                    <i class="fa fa-fw fa-shopping-cart"></i>
+                                </a></li>
+                            </ul>
+                        </div>  
+                        {% endif %}
+                        
+                        <a class="btn" href="{{ controller.url_for('logoff') }}">
+                            Uitloggen
+                            <i class="fa fa-fw fa-sign-out-alt"></i>
+                        </a>
+                       {% else %}
+                        <a class="btn" href="{{ controller.url_for('login') }}">
+                            Login
+                            <i class="fa fa-fw fa-sign-in-alt"></i>
+                        </a>
+                        <a class="btn" href="{{ controller.url_for('register') }}">
+                            Aanmelden
+                            <i class="fa fa-fw fa-address-card"></i>
+                        </a>
+                        {# <a type="button" class="btn">
+                            Contact
+                            <i class="fa fa-fw fa-envelope-open"></i>
+                        </a> #}
+                        {% endif %}
+                   </div>
+               </div>
+            </div>
+        </nav>
+        
+        <main>
+            {% if controller.errors %}
+            <div class="container-fluid">
+                {% for error in controller.errors %}
+                <div class="holder holder-error">
+                    <div class="holder-title"></div>
+                    <div class="holder-content">
+                        {{ error }}
+                    </div>
+                    <div class="holder-footer"></div>
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+            
+            <div class="container-fluid">
+            {% block contents %}
+            {% endblock %}
+            </div>
+        </main>
+        
+        {% block scripts %}
+            {% for script in controller.javascripts %}
+                <script type="text/javascript" src="{{ script }}"></script>
+            {% endfor %}
+        {% endblock %}
+    </body>
+</html>

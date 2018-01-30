@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block contents %}
+
+<div class="row">
+    <div class="col-md-3 col-md-offset-2">
+        <div class="holder holder-blue">
+            <div class="holder-title">
+                Welkom <strong>{{ controller.user.username }}</strong>
+            </div>
+            <div class="holder-content">
+                ...
+            </div>
+            <div class="holder-footer"></div>
+        </div>
+        <!--<div class="holder holder-gray">-->
+        <!--    <div class="holder-title">-->
+        <!--        Jouw potje-->
+        <!--    </div>-->
+        <!--    <div class="holder-content">-->
+        <!--        €5.00-->
+        <!--    </div>-->
+        <!--    <div class="holder-footer"></div>-->
+        <!--</div>-->
+        <div class="holder holder-gray">
+            <div class="holder-title">
+                Planning
+            </div>
+            <div class="holder-content">
+                Kok: Bassie<br>
+                Boodschappen: Bassie<br>
+                Opruimen: <strong>Jij</strong>
+            </div>
+            <div class="holder-footer"></div>
+        </div>
+    </div>
+    <div class="holder holder-dark-gray col-md-5">
+        <div class="holder-title">
+            Berichten
+        </div>
+        <div class="holder-content">
+            ...
+        </div>
+        <div class="holder-footer"></div>
+    </div>
+</div>
+
+{% endblock %}

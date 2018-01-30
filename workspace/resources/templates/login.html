@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block contents %}
+
+<div class="row">
+    <div class="holder holder-blue col-md-4 col-md-offset-4">
+        <div class="holder-title">
+            Login
+            <i class="fa fa-sign-in-alt"></i>
+        </div>
+        <div class="holder-content">
+            <form method="post" action="{{ controller.router.full_link.fullPath() }}">
+                <div class="form-group">
+                    <label required for="login-email">E-mailadres</label>
+                    <input required value="{{ controller.router.post_data.email }}" name="email" type="email" class="form-control" id="login-email" placeholder="E-mailadres">
+                </div>
+                <div class="form-group">
+                    <label for="login-password" required>Wachtwoord</label>
+                    <input required name="password" type="password" class="form-control" id="login-password" placeholder="Wachtwoord">
+                </div>
+                <button type="submit" class="btn btn-blue btn-wide btn-right">Login</button>
+            </form>
+        </div>
+        <div class="holder-footer"></div>
+    </div>
+</div>
+
+{% endblock %}
